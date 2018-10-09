@@ -2,4 +2,5 @@
 pipeline:
   docker:
     image: plugins/docker
+    repo: citrinru/checkzone
     tags: latest
