@@ -18,5 +18,4 @@ RUN apk update && apk add --no-cache nsd && \
 FROM scratch
 COPY --from=bin /newroot /
 
-USER nobody
 CMD ["/bin/sh"]
