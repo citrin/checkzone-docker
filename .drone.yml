@@ -1,4 +1,4 @@
-# Build Docker image using https://drone.io/ CI/CD
+# Build Docker image using https://drone.io/ CI/CD and publish it to https://hub.docker.com/r/citrinru/checkzone/
 ---
 pipeline:
   docker:
