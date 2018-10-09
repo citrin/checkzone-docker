@@ -3,4 +3,5 @@ pipeline:
   docker:
     image: plugins/docker
     repo: citrinru/checkzone
+    secrets: [ docker_username, docker_password ]
     tags: latest
