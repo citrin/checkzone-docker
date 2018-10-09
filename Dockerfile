@@ -10,8 +10,13 @@ RUN apk update && apk add --no-cache nsd && \
         for _lib in $lib_depends; do if [ -e /usr/lib/$_lib ]; then cp -dp /usr/lib/$_lib* usr/lib/; fi; done && \
         cp -dp /usr/sbin/nsd-checkzone usr/sbin && \
         cp -dp /bin/busybox bin && \
-        /bin/busybox --install -s /newroot/bin
+        /bin/busybox --install -s /newroot/bin && \
+		egrep '^(root|nobody):' /etc/passwd > /newroot/etc/passwd && \
+		egrep '^(root|nobody):' /etc/group  > /newroot/etc/group && \
+		install -d -m 1777 /newroot/tmp
 
 FROM scratch
 COPY --from=bin /newroot /
-ENTRYPOINT ["/bin/sh"]
+
+USER nobody
+CMD ["/bin/sh"]
