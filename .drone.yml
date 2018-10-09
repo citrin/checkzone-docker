@@ -1,4 +1,5 @@
 ---
 pipeline:
   docker:
+    image: plugins/docker
     tags: latest
