@@ -3,7 +3,7 @@ FROM alpine:3.8 AS bin
 RUN apk update && apk add --no-cache nsd && \
         mkdir /newroot && \
         cd /newroot && \
-        mkdir -p etc lib usr/lib bin usr/sbin && \
+        mkdir -p etc lib usr/lib bin usr/sbin root && \
         cp -dp /lib/ld-musl-x86_64.so* lib/ && \
         lib_depends=$(scanelf --nobanner --format '%n#p' /bin/busybox /usr/sbin/nsd-checkzone | sed -e 's/,/\n/g' | sort -u) && \
         for _lib in $lib_depends; do if [ -e /lib/$_lib ];     then cp -dp /lib/$_lib*     lib/; fi; done && \
