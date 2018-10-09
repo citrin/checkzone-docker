@@ -6,3 +6,5 @@ pipeline:
     repo: citrinru/checkzone
     secrets: [ docker_username, docker_password ]
     tags: latest
+    when:
+      event: [push, tag]
