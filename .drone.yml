@@ -1,3 +1,4 @@
+# Build Docker image using https://drone.io/ CI/CD
 ---
 pipeline:
   docker:
