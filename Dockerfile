@@ -1,4 +1,4 @@
-FROM alpine:3.9.3 AS bin
+FROM alpine:3.9.4 AS bin
 
 RUN apk update && apk add --no-cache nsd && \
         mkdir /newroot && \
