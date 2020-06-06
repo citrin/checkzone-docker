@@ -1,4 +1,4 @@
-FROM alpine:3.11.3 AS bin
+FROM alpine:3.12.0 AS bin
 LABEL maintainer="citrin+github@citrin.ru"
 LABEL org.label-schema.description="NSD DNS zone file syntax checker"
 LABEL org.label-schema.url="https://www.nlnetlabs.nl/documentation/nsd/nsd-checkzone/"
